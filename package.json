@@ -1,0 +1,19 @@
+{
+  "name": "react-component-preview",
+  "main": "./lib/react-component-preview",
+  "version": "0.0.1",
+  "description": "Preview React Component",
+  "keywords": [
+      'react', 'component', 'preview'
+  ],
+  "activationCommands": {
+    "atom-workspace": "react-component-preview:toggle"
+  },
+  "repository": "https://github.com/atom/react-component-preview",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}

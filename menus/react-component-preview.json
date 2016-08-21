@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle react-component-preview",
+        "command": "react-component-preview:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "react-component-preview",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "react-component-preview:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
