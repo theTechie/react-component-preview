@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "description": "Preview React Component",
   "keywords": [
-      "react", "component", "preview"
+    "react",
+    "component",
+    "preview"
   ],
   "activationCommands": {
     "atom-workspace": "react-component-preview:toggle"
@@ -15,5 +17,6 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "react-for-atom": "^15.2.1-0"
   }
 }
