@@ -1,12 +1,18 @@
 {
   "name": "react-component-preview",
   "main": "./lib/react-component-preview",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Preview React Component",
+  "scripts": {
+    "start": "node server.js"
+  },
   "keywords": [
     "react",
     "component",
-    "preview"
+    "preview",
+    "live",
+    "hot-loader",
+    "atom"
   ],
   "activationCommands": {
     "atom-workspace": "react-component-preview:toggle"
@@ -17,6 +23,19 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "react-for-atom": "^15.2.1-0"
+    "babel-core": "^6.0.20",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.6.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-for-atom": "^15.2.1-0",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
   }
 }

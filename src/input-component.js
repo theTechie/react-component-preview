@@ -1,6 +1,4 @@
-'use babel'
-
-import {React} from 'react-for-atom'
+import React from 'react'
 
 export default class Test extends React.Component {
   constructor(props) {

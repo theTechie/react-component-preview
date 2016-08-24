@@ -1,3 +1,3 @@
-## 0.1.0 - First Release
-* Every feature added
-* Every bug fixed
+## 0.0.2 - First Release
+* hot reload with webpack
+* TODO: integrate with editor view
