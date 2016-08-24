@@ -8,7 +8,7 @@ export default class TextArea extends React.Component {
   render() {
     return (
         <div>
-            <textarea value={this.props.value} />
+            <textarea defaultValue={this.props.value} value={this.props.value} />
         </div>
     );
   }
