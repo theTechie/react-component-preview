@@ -17,6 +17,7 @@ export default class Test extends React.Component {
     return (
         <div>
             <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <div>{this.state.value}</div>
         </div>
     )
   }

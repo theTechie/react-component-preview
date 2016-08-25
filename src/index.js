@@ -1,5 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './app';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+var ComponentToRender = require(__COMPONENT_TO_RENDER)
+
+if (ComponentToRender.default !== undefined) {
+    ComponentToRender = ComponentToRender.default
+}
+
+ReactDOM.render(<ComponentToRender />, document.getElementById('root'))
