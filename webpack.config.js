@@ -23,7 +23,7 @@ module.exports = function(component_to_render, sourcePath) {
       module: {
         loaders: [{
           test: /\.js?$/,
-          loaders: ['react-hot', 'babel'],
+          loader: 'babel',
           include: [path.join(__dirname, 'src'), sourcePath],
           exclude: /node_modules/,
       },
