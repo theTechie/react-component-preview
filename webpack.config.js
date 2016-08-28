@@ -18,7 +18,9 @@ module.exports = function(component_to_render, sourcePath) {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             __COMPONENT_TO_RENDER: JSON.stringify(component_to_render)
-        })
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.NoErrorsPlugin()
       ],
       module: {
         loaders: [{
