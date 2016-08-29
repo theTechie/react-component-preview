@@ -1,24 +1,24 @@
 import React from 'react'
 
 export default class Test extends React.Component {
-  constructor(props) {
-    super(props)
+    constructor(props) {
+        super(props)
 
-    this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this)
 
-    this.state = { value: '' }
-  }
+        this.state = { value: '' }
+    }
+    
+    handleChange(e) {
+        this.setState({ value: e.target.value })
+    }
 
-  handleChange(e) {
-      this.setState({ value: e.target.value })
-  }
-
-  render() {
-    return (
-        <div>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-            <div>{this.state.value}</div>
-        </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                <div>{this.state.value}</div>
+            </div>
+        )
+    }
 }
