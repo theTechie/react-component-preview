@@ -1,7 +1,7 @@
 {
   "name": "react-component-preview",
   "main": "./lib/react-component-preview",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Preview React Component",
   "scripts": {
     "start": "node server.js"
