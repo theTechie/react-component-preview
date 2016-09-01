@@ -1,3 +1,4 @@
-# react-component-preview package
+# react-component-preview
 Preview React Component in an Atom split-view
+
 ![](https://raw.github.com/theTechie/react-component-preview/master/preview.gif)
