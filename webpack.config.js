@@ -22,10 +22,7 @@ module.exports = function(component_to_render, sourcePath) {
                 __COMPONENT_TO_RENDER: JSON.stringify(component_to_render)
             }),
             new webpack.NamedModulesPlugin(),
-            new webpack.NoErrorsPlugin(),
-            new webpack.ProvidePlugin({
-                React: 'react'
-            })
+            new webpack.NoErrorsPlugin()
         ],
         resolve: {
             root: path.resolve(baseSrcPath + '/src'),
@@ -33,16 +30,17 @@ module.exports = function(component_to_render, sourcePath) {
             extensions: ['', '.js', '.jsx', '.less']
         },
         module: {
-            loaders: [{
-                test: /\.jsx?$/,
-                loaders: ['react-hot', 'babel'],
-                include: [path.join(__dirname, 'src'), path.resolve(sourcePath)].concat(['', 'node_modules', 'bower_components', 'src/pp/core/less/', path.resolve(baseSrcPath + '/src')]),
-                exclude: /node_modules/
-            },
-            {
-                test: /\.less/,
-                loader: 'style!css!less'
-            }]
+            loaders: [
+                {
+                    test: /\.jsx?$/,
+                    loaders: ['react-hot', 'babel'],
+                    include: [path.join(__dirname, 'src'), path.resolve(sourcePath)].concat(['', 'node_modules', 'bower_components', 'src/pp/core/less/', path.resolve(baseSrcPath + '/src')]),
+                    exclude: /node_modules/
+                },
+                { test: /\.less$/, loader: 'style!css!less' },
+                { test: /\.css$/, loader: 'style-loader!css-loader' },
+                { test: /\.(png|jpg|jpeg|gif|woff)$/, loader: 'file-loader' }
+            ]
         }
     }
 }
