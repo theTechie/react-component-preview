@@ -1,6 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var baseSrcPath = '/Users/gagan/Documents/gagan/pp_source/main_service/frontend/harmony'  // NOTE: read this from config ?
+
+// TODO: problems to solve
+// 1. src/pp/modules/root/less
+// 2. src/fonts (modified pp-common-font.less)
+
 module.exports = function(component_to_render, sourcePath) {
     return {
         devtool: 'eval',
@@ -22,17 +28,25 @@ module.exports = function(component_to_render, sourcePath) {
             new webpack.NamedModulesPlugin(),
             new webpack.NoErrorsPlugin()
         ],
+        resolve: {
+            root: path.resolve(baseSrcPath) + '/src',
+            modules: ['', 'node_modules', 'bower_components', 'src/pp/core/less'],
+            extensions: ['', '.js', '.jsx', '.less']
+        },
         module: {
             loaders: [
                 {
                     test: /\.jsx?$/,
-                    loaders: ['react-hot', 'babel'],
-                    include: [path.join(__dirname, 'src'), path.resolve(sourcePath)],
+                    loaders: ['react-hot', 'babel?cacheDirectory'],
                     exclude: /node_modules/
                 },
                 { test: /\.less$/, loader: 'style!css!less' },
                 { test: /\.css$/, loader: 'style-loader!css-loader' },
-                { test: /\.(png|jpg|jpeg|gif|woff)$/, loader: 'file-loader' }
+                {
+                    test: /\.(png|jpg|jpeg|gif|woff|ttf)$/,
+                    loader: 'file-loader',
+                    //include: path.join(path.resolve(baseSrcPath), 'src/fonts')
+                }
             ]
         }
     }
