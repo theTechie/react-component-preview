@@ -29,11 +29,16 @@ module.exports = function(component_to_render, sourcePath) {
             new webpack.NoErrorsPlugin()
         ],
         resolve: {
-            root: path.resolve(baseSrcPath) + '/src',
-            modules: ['', 'node_modules', 'bower_components', 'src/pp/core/less'],
+            modules: ['', 'node_modules', 'bower_components', path.resolve(baseSrcPath) + '/src', path.resolve(baseSrcPath) + '/src/pp/core/less', path.resolve(baseSrcPath) + '/src/pp/modules/root/less'],
             extensions: ['', '.js', '.jsx', '.less']
         },
         module: {
+            preLoaders: [
+                {
+                    test: /\.less$/,
+                    loader: path.resolve(__dirname + '/loaders/addtilde')
+                }
+            ],
             loaders: [
                 {
                     test: /\.jsx?$/,
