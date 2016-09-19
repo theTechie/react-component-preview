@@ -2,7 +2,9 @@
 Preview React Component in an Atom split-view
 
 # how to use
-run ```apm link``` from the component directory
+From component directory,
+ - ```npm install```
+ - ```apm link``` 
 
 Ctrl + Opt + O (shortcut to open preview)
 
