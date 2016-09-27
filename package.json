@@ -17,7 +17,7 @@
   "activationCommands": {
     "atom-workspace": "react-component-preview:toggle"
   },
-  "repository": "https://github.com/atom/react-component-preview",
+  "repository": "https://github.com/theTechie/react-component-preview",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
