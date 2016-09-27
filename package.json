@@ -1,7 +1,7 @@
 {
   "name": "react-component-preview",
   "main": "./lib/react-component-preview",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Preview React Component",
   "scripts": {
     "preinstall": "npm install"
