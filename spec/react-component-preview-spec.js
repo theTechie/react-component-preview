@@ -1,6 +1,6 @@
-'use babel';
+'use babel'
 
-import ReactComponentPreview from '../lib/react-component-preview';
+import ReactComponentPreview from '../lib/react-component-preview'
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
@@ -8,66 +8,92 @@ import ReactComponentPreview from '../lib/react-component-preview';
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe('ReactComponentPreview', () => {
-  let workspaceElement, activationPromise;
+	let workspaceElement, activationPromise
 
-  beforeEach(() => {
-    workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('react-component-preview');
-  });
+	beforeEach(() => {
+		workspaceElement = atom.views.getView(atom.workspace)
+		activationPromise = atom.packages.activatePackage(
+			'react-component-preview'
+		)
+	})
 
-  describe('when the react-component-preview:toggle event is triggered', () => {
-    it('hides and shows the modal panel', () => {
-      // Before the activation event the view is not on the DOM, and no panel
-      // has been created
-      expect(workspaceElement.querySelector('.react-component-preview')).not.toExist();
+	describe('when the react-component-preview:toggle event is triggered', () => {
+		it('hides and shows the modal panel', () => {
+			// Before the activation event the view is not on the DOM, and no panel
+			// has been created
+			expect(
+				workspaceElement.querySelector('.react-component-preview')
+			).not.toExist()
 
-      // This is an activation event, triggering it will cause the package to be
-      // activated.
-      atom.commands.dispatch(workspaceElement, 'react-component-preview:toggle');
+			// This is an activation event, triggering it will cause the package to be
+			// activated.
+			atom.commands.dispatch(
+				workspaceElement,
+				'react-component-preview:toggle'
+			)
 
-      waitsForPromise(() => {
-        return activationPromise;
-      });
+			waitsForPromise(() => {
+				return activationPromise
+			})
 
-      runs(() => {
-        expect(workspaceElement.querySelector('.react-component-preview')).toExist();
+			runs(() => {
+				expect(
+					workspaceElement.querySelector('.react-component-preview')
+				).toExist()
 
-        let reactComponentPreviewElement = workspaceElement.querySelector('.react-component-preview');
-        expect(reactComponentPreviewElement).toExist();
+				let reactComponentPreviewElement = workspaceElement.querySelector(
+					'.react-component-preview'
+				)
+				expect(reactComponentPreviewElement).toExist()
 
-        let reactComponentPreviewPanel = atom.workspace.panelForItem(reactComponentPreviewElement);
-        expect(reactComponentPreviewPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'react-component-preview:toggle');
-        expect(reactComponentPreviewPanel.isVisible()).toBe(false);
-      });
-    });
+				let reactComponentPreviewPanel = atom.workspace.panelForItem(
+					reactComponentPreviewElement
+				)
+				expect(reactComponentPreviewPanel.isVisible()).toBe(true)
+				atom.commands.dispatch(
+					workspaceElement,
+					'react-component-preview:toggle'
+				)
+				expect(reactComponentPreviewPanel.isVisible()).toBe(false)
+			})
+		})
 
-    it('hides and shows the view', () => {
-      // This test shows you an integration test testing at the view level.
+		it('hides and shows the view', () => {
+			// This test shows you an integration test testing at the view level.
 
-      // Attaching the workspaceElement to the DOM is required to allow the
-      // `toBeVisible()` matchers to work. Anything testing visibility or focus
-      // requires that the workspaceElement is on the DOM. Tests that attach the
-      // workspaceElement to the DOM are generally slower than those off DOM.
-      jasmine.attachToDOM(workspaceElement);
+			// Attaching the workspaceElement to the DOM is required to allow the
+			// `toBeVisible()` matchers to work. Anything testing visibility or focus
+			// requires that the workspaceElement is on the DOM. Tests that attach the
+			// workspaceElement to the DOM are generally slower than those off DOM.
+			jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.react-component-preview')).not.toExist();
+			expect(
+				workspaceElement.querySelector('.react-component-preview')
+			).not.toExist()
 
-      // This is an activation event, triggering it causes the package to be
-      // activated.
-      atom.commands.dispatch(workspaceElement, 'react-component-preview:toggle');
+			// This is an activation event, triggering it causes the package to be
+			// activated.
+			atom.commands.dispatch(
+				workspaceElement,
+				'react-component-preview:toggle'
+			)
 
-      waitsForPromise(() => {
-        return activationPromise;
-      });
+			waitsForPromise(() => {
+				return activationPromise
+			})
 
-      runs(() => {
-        // Now we can test for view visibility
-        let reactComponentPreviewElement = workspaceElement.querySelector('.react-component-preview');
-        expect(reactComponentPreviewElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'react-component-preview:toggle');
-        expect(reactComponentPreviewElement).not.toBeVisible();
-      });
-    });
-  });
-});
+			runs(() => {
+				// Now we can test for view visibility
+				let reactComponentPreviewElement = workspaceElement.querySelector(
+					'.react-component-preview'
+				)
+				expect(reactComponentPreviewElement).toBeVisible()
+				atom.commands.dispatch(
+					workspaceElement,
+					'react-component-preview:toggle'
+				)
+				expect(reactComponentPreviewElement).not.toBeVisible()
+			})
+		})
+	})
+})

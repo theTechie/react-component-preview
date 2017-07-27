@@ -1,46 +1,39 @@
 {
-  "name": "react-component-preview",
-  "main": "./lib/react-component-preview",
-  "version": "2.0.0",
-  "description": "Preview React Component",
-  "scripts": {
-    "preinstall": "npm install"
-  },
-  "keywords": [
-    "react",
-    "component",
-    "preview",
-    "live",
-    "hot-loader",
-    "atom"
-  ],
-  "activationCommands": {
-    "atom-workspace": "react-component-preview:toggle"
-  },
-  "repository": "https://github.com/theTechie/react-component-preview",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "dependencies": {
-    "babel-core": "^6.0.20",
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.0.1",
-    "babel-preset-es2015": "^6.0.15",
-    "babel-preset-react": "^6.0.15",
-    "babel-preset-stage-0": "^6.0.15",
-    "css-loader": "^0.24.0",
-    "eslint": "^3.3.1",
-    "eslint-plugin-react": "^6.1.2",
-    "file-loader": "^0.9.0",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "react-for-atom": "^15.2.1-0",
-    "react-hot-loader": "^1.3.0",
-    "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.21",
-    "webpack-dev-server": "^2.0.0-beta"
-  }
+	"name": "react-component-preview",
+	"main": "./lib/react-component-preview",
+	"version": "3.0.0",
+	"description": "Preview React Component",
+	"scripts": {
+		"start": "npm install",
+		"prebuild": "rimraf dist"
+	},
+	"keywords": ["react", "component", "preview", "live", "hot-loader", "atom"],
+	"activationCommands": {
+		"atom-workspace": "react-component-preview:toggle"
+	},
+	"repository": "https://github.com/theTechie/react-component-preview",
+	"license": "MIT",
+	"engines": {
+		"atom": ">=1.0.0 <2.0.0"
+	},
+	"dependencies": {
+		"babel-core": "^6.25.0",
+		"babel-eslint": "^7.2.3",
+		"babel-loader": "^7.1.1",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-2": "^6.24.1",
+		"css-loader": "^0.28.4",
+		"eslint": "^4.3.0",
+		"eslint-plugin-react": "^7.1.0",
+		"file-loader": "^0.11.2",
+		"less": "^2.7.2",
+		"less-loader": "^4.0.5",
+		"react": "^15.6.1",
+		"react-dom": "^15.6.1",
+		"react-hot-loader": "next",
+		"style-loader": "^0.18.2",
+		"webpack": "^3.4.1",
+		"webpack-dev-server": "^2.6.1"
+	}
 }

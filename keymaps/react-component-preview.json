@@ -1,5 +1,5 @@
 {
-  "atom-workspace": {
-    "ctrl-alt-o": "react-component-preview:toggle"
-  }
+	"atom-workspace": {
+		"ctrl-alt-o": "react-component-preview:toggle"
+	}
 }
